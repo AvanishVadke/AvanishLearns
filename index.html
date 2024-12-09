@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Square finder app by Avanish </title>
+    <style>
+        *{
+            font-size: 50px;
+            font-family: sans-serif;
+        }
+        body{
+            background-color: azure;
+        }
+        h1{
+            background-color: teal;
+            color: greenyellow;
+            width: 70%;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>Square finder App</h1>
+        <form onsubmit="show()">
+            <input type="number" step="any" placeholder="Please enter a number" id="num">
+            <br/><br/>
+            <input type="submit" style="border-radius: 20px;" value="Find the square"></input>
+        </form>
+        <h2 id="msg"></h2>
+    </center>
+
+    <script>
+        function show(){
+            event.preventDefault();
+            let num = document.getElementById("num");
+            let msg = document.getElementById("msg");
+
+            if(num.value === "") {
+                alert("Please enter your name!!");
+                msg.innerHTML = "";
+                num.focus();
+                return;
+            }
+            
+            let n = parseFloat(num.value); 
+            let r = n*n;
+            let ans = "Square = " + r.toFixed(2);
+
+            
+            msg.innerHTML = ans;
+        }
+    </script>
+</body>
+</html>
